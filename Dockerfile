@@ -19,12 +19,14 @@ RUN apt-get -qqy update && \
     x11vnc \
     openbox \
     python-numpy \
-    net-tools \
+    net-tools 
+RUN apt-get -qqy --no-install-recommends install \
     qemu-kvm \
     libvirt-clients \
     libvirt-daemon-system \
     bridge-utils \
   && rm -rf /var/lib/apt/lists/*
+ 
 	
 ARG SDK_VERSION=commandlinetools-linux-6514223_latest
 ARG ANDROID_BUILD_TOOLS_VERSION=29.0.2
