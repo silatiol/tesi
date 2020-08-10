@@ -1,4 +1,4 @@
-FROM openjdk:9-jdk
+FROM openjdk:15-jdk-buster
 
 ENV DEBIAN_FRONTEND=noninteractive
 
