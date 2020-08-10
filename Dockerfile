@@ -21,7 +21,7 @@ RUN apt-get -qqy update && \
     python-numpy \
     net-tools 
 RUN cat /etc/apt/sources.list
-RUN apt -qqy --no-install-recommends install qemu-system-x86 \
+RUN apt -qqy --no-install-recommends install qemu-kvm \
     libvirt-clients \
     libvirt-daemon-system \
     bridge-utils \
