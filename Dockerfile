@@ -19,11 +19,15 @@ RUN apt-get -qqy update && \
     x11vnc \
     openbox \
     python-numpy \
-    net-tools 
+    net-tools \
+    libpulse0 \
+
 RUN cat /etc/apt/sources.list
 RUN apt -qqy --no-install-recommends install qemu-kvm \
     libvirt-clients \
     libvirt-daemon-system \
+    libvirt-bin \
+    ubuntu-vm-builder \
     bridge-utils \
   && rm -rf /var/lib/apt/lists/*
  
