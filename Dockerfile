@@ -86,12 +86,25 @@ ENV PATH ${PATH}:${ANDROID_HOME}/build-tools
 
 RUN yes | sdkmanager --licenses && \
     sdkmanager "platforms;android-${API_LEVEL}" "system-images;android-${API_LEVEL};${IMG_TYPE};${SYS_IMG}" "emulator"
+
+ENV DISPLAY=:0 \
+    SCREEN=0 \
+    SCREEN_WIDTH=1600 \
+    SCREEN_HEIGHT=900 \
+    SCREEN_DEPTH=24+32 \
+    LOCAL_PORT=5900 \
+    TARGET_PORT=6080 \
+    TIMEOUT=1 \
+    VIDEO_PATH=/tmp/video \
+    LOG_PATH=/var/log/supervisor
+
+ENV QTWEBENGINE_DISABLE_SANDBOX=1
 	
-	ADD src/rc.xml /etc/xdg/openbox/rc.xml
-	
-	EXPOSE 6080 5554 5555
-	
-	COPY devices /root/devices
+ADD src/rc.xml /etc/xdg/openbox/rc.xml
+
+EXPOSE 6080 5554 5555
+
+COPY devices /root/devices
 
 COPY src /root/src	
 	COPY supervisord.conf /root/
