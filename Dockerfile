@@ -20,8 +20,8 @@ RUN apt-get -qqy update && \
     openbox \
     python-numpy \
     net-tools 
-RUN apt-get -qqy --no-install-recommends install \
-    qemu-kvm \
+RUN cat /etc/apt/sources.list
+RUN apt -qqy --no-install-recommends install qemu-system-x86 \
     libvirt-clients \
     libvirt-daemon-system \
     bridge-utils \
