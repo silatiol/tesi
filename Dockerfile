@@ -20,7 +20,8 @@ RUN apt-get -qqy update && \
     openbox \
     python-numpy \
     net-tools \
-    libpulse0
+    libpulse0 \
+    libxcomposite1
 
 RUN cat /etc/apt/sources.list
 RUN apt -qqy --no-install-recommends install qemu-kvm \
