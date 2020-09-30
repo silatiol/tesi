@@ -31,7 +31,7 @@ RUN apt -qqy --no-install-recommends install qemu-kvm \
   && rm -rf /var/lib/apt/lists/*
  
 	
-ARG SDK_VERSION=commandlinetools-linux-6514223_latest
+ARG SDK_VERSION=commandlinetools-linux-6609375_latest
 ARG ANDROID_BUILD_TOOLS_VERSION=29.0.2
 ARG ANDROID_PLATFORM_VERSION="android-29"
 
