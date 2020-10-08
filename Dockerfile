@@ -109,7 +109,7 @@ EXPOSE 6080 5554 5555
 
 COPY devices /root/devices
 
-COPY avd /root/.android/avd
+COPY avd /root/avd
 COPY src /root/src	
 COPY supervisord.conf /root/
 COPY entrypoint.sh /root/
