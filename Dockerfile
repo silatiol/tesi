@@ -90,6 +90,9 @@ ENV PATH ${PATH}:${ANDROID_HOME}/build-tools
 RUN yes | sdkmanager --licenses && \
     sdkmanager "platforms;android-${API_LEVEL}" "system-images;android-${API_LEVEL};${IMG_TYPE};${SYS_IMG}" "emulator"
 
+RUN wget -nv -O google_play_services.apk "https://www.apkmirror.com/apk/google-inc/google-play-services/google-play-services-20-36-15-release/google-play-services-20-36-15-000300-333172415-android-apk-download/download/"
+RUN wget -nv -O google_play_store.apk "https://www.apkmirror.com/apk/google-inc/google-play-store/google-play-store-22-2-13-release/google-play-store-22-2-13-16-0-pr-335073928-android-apk-download/download/"
+
 ENV DISPLAY=:0 \
     SCREEN=0 \
     SCREEN_WIDTH=1600 \
