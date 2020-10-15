@@ -8,6 +8,7 @@ RUN apt-get -qqy update && \
     apt-get -qqy --no-install-recommends install \
     ca-certificates \
     zip \
+    lzip \
     unzip \
     curl \
     wget \
