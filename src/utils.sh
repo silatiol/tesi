@@ -26,11 +26,24 @@ function change_language_if_needed() {
 function install_google_play () {
   wait_emulator_to_be_ready
   echo "Google Play Service will be installed"
-  adb install -r "/root/google_play_services.apk"
-  echo "Google Play Store will be installed"
-  adb install -r "/root/google_play_store.apk"
+  adb remount
+  adb push etc /system
+  adb push framework /system
+  adb push app /system
+  adb push priv-app /system
+}
+
+function prepare_zip () {
+  unzip gapps.zip 'Core/*'
+  rm Core/setup*
+  lzip -d Core/*.lz
+  for f in $(ls Core/*.tar); do
+    tar -x --strip-components 2 -f $f
+  done
 }
 
 change_language_if_needed
+sleep 1
+prepare_zip
 sleep 1
 install_google_play

@@ -90,8 +90,7 @@ ENV PATH ${PATH}:${ANDROID_HOME}/build-tools
 RUN yes | sdkmanager --licenses && \
     sdkmanager "platforms;android-${API_LEVEL}" "system-images;android-${API_LEVEL};${IMG_TYPE};${SYS_IMG}" "emulator"
 
-RUN wget -nv -U "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" -O google_play_services.apk "https://download.apkpure.com/b/APK/Y29tLmdvb2dsZS5hbmRyb2lkLmdtc18yMDM5MTUwMTNfNmQ3NGYzZDE?_fn=R29vZ2xlIFBsYXkgc2VydmljZXNfdjIwLjM5LjE1ICgwMjA3MDAtMzM1MDg1ODEyKV9hcGtwdXJlLmNvbS5hcGs&as=2ed0e0b08ac0147ba37c48535cff12745f884b36&ai=356647825&at=1602767550&_sa=ai%2Cat&k=34221b1c7044969336731588d5dbdfb55f8aedbe&_p=Y29tLmdvb2dsZS5hbmRyb2lkLmdtcw&c=1%7CTOOLS%7CZGV2PUdvb2dsZSUyMExMQyZ0PWFwayZzPTUzNTEzNjkxJnZuPTIwLjM5LjE1JTIwKDAyMDcwMC0zMzUwODU4MTIpJnZjPTIwMzkxNTAxMw"
-RUN wget -nv -U "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" -O google_play_store.apk "https://download.apkpure.com/b/APK/Y29tLmFuZHJvaWQudmVuZGluZ184MjIzMTMxMF8xZDBjNDAyMA?_fn=R29vZ2xlIFBsYXkgU3RvcmVfdjIyLjMuMTMtMjEgWzBdIFtQUl0gMzM2MzM5NzgxX2Fwa3B1cmUuY29tLmFwaw&as=f94870a040702c8b2768236a1a209bf15f884b5d&ai=356647825&at=1602767589&_sa=ai%2Cat&k=a68123e13a2240f4bdc247dd3d4957a05f8aede5&_p=Y29tLmFuZHJvaWQudmVuZGluZw&c=1%7CTOOLS%7CZGV2PUdvb2dsZSUyMExMQyZ0PWFwayZzPTIxMzQ0NTYyJnZuPTIyLjMuMTMtMjElMjAlNUIwJTVEJTIwJTVCUFIlNUQlMjAzMzYzMzk3ODEmdmM9ODIyMzEzMTA&hot=1"
+RUN wget -nv -U "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" -O gapps.zip "https://netcologne.dl.sourceforge.net/project/opengapps/x86_64/20201015/open_gapps-x86_64-9.0-pico-20201015.zip"
 
 ENV DISPLAY=:0 \
     SCREEN=0 \
