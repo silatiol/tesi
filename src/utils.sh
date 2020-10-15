@@ -26,11 +26,13 @@ function change_language_if_needed() {
 function install_google_play () {
   wait_emulator_to_be_ready
   echo "Google Play Service will be installed"
+  adb root
   adb remount
   adb push etc /system
   adb push framework /system
   adb push app /system
   adb push priv-app /system
+  adb unroot
 }
 
 function prepare_zip () {
