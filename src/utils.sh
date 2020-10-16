@@ -36,6 +36,7 @@ function install_google_play () {
 }
 
 function prepare_zip () {
+  umask 000
   unzip gapps.zip 'Core/*'
   rm Core/setup*
   lzip -d Core/*.lz
