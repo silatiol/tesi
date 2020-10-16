@@ -25,14 +25,10 @@ function change_language_if_needed() {
 
 function install_google_play () {
   wait_emulator_to_be_ready
-  echo "Google Play Service will be installed"
-  adb root
-  adb remount
-  adb push etc /system
-  adb push framework /system
-  adb push app /system
-  adb push priv-app /system
-  adb unroot
+  echo "Apps will be installed"
+  for f in $(ls apps/*.apk); do
+    adb install $f
+  done
 }
 
 function prepare_zip () {
@@ -46,7 +42,5 @@ function prepare_zip () {
 }
 
 change_language_if_needed
-sleep 1
-prepare_zip
 sleep 1
 install_google_play

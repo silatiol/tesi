@@ -70,7 +70,7 @@ RUN  wget -nv -O noVNC.zip "https://github.com/kanaka/noVNC/archive/${NOVNC_SHA}
 ARG ANDROID_VERSION=5.0.1
 ARG API_LEVEL=29
 ARG SYS_IMG=x86_64
-ARG IMG_TYPE=google_apis
+ARG IMG_TYPE=google_apis_playstore
 ARG BROWSER=android
 ARG CHROME_DRIVER=2.40
 ARG GOOGLE_PLAY_SERVICE=12.8.74
@@ -113,7 +113,8 @@ EXPOSE 6080 5554 5555
 COPY devices /root/devices
 
 COPY avd /root/avd
-COPY src /root/src	
+COPY src /root/src
+COPY apps /root/apps	
 COPY supervisord.conf /root/
 COPY entrypoint.sh /root/
 RUN chmod -R +x /root/src && chmod +x /root/supervisord.conf && chmod +x /root/entrypoint.sh
