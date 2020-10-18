@@ -10,7 +10,7 @@
 ) >> /root/.android/avd/testing.avd/config.ini
 
 echo y | rm /tmp/.X0-lock
-echo y | rm -r /root/.android/avd
-echo y | cp -r /root/avd /root/.android/avd
+#echo y | rm -r /root/.android/avd
+#echo y | cp -r /root/avd /root/.android/avd
 
 exec $*

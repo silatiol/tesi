@@ -29,6 +29,11 @@ function install_google_play () {
   for f in $(ls apps/*.apk); do
     adb install $f
   done
+
+  adb shell
+  settings put global window_animation_scale 0
+  settings put global transition_animation_scale 0
+  settings put global animator_duration_scale 0
 }
 
 function prepare_zip () {
