@@ -112,10 +112,10 @@ EXPOSE 6080 5554 5555
 
 COPY devices /root/devices
 
-COPY avd /root/.android/avd
-COPY keys /root/.android/
+COPY avd /root/avd
+COPY keys /root/keys
 COPY src /root/src
-COPY apps /root/apps
+COPY apps /root/apps	
 COPY supervisord.conf /root/
 COPY entrypoint.sh /root/
 RUN chmod -R +x /root/src && chmod +x /root/supervisord.conf && chmod +x /root/entrypoint.sh
