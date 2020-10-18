@@ -34,6 +34,8 @@ function install_google_play () {
   settings put global window_animation_scale 0
   settings put global transition_animation_scale 0
   settings put global animator_duration_scale 0
+  exit
+  echo "Done"
 }
 
 function prepare_zip () {
@@ -46,6 +48,4 @@ function prepare_zip () {
   done
 }
 
-change_language_if_needed
-sleep 1
 install_google_play
