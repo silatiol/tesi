@@ -111,6 +111,7 @@ EXPOSE 6080 5554 5555
 COPY devices /root/devices
 
 #COPY snap /root/snap
+COPY avd /root/avd
 COPY keys /root/keys
 COPY src /root/src
 COPY apps /root/apps	

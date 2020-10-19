@@ -11,6 +11,7 @@
 
 echo y | rm /tmp/.X0-lock
 echo y | rm -r /root/.android/avd
+echo y | cp -r /root/avd /root/.android/avd
 #echo y | cp -r /root/snap /root/.android/avd/testing.avd/snapshots/default_boot/
 #echo y | cp -r /root/keys/* /root/.android/
 
