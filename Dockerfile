@@ -67,10 +67,10 @@ RUN  wget -nv -O noVNC.zip "https://github.com/kanaka/noVNC/archive/${NOVNC_SHA}
  && rm websockify.zip \
  && ln noVNC/vnc_auto.html noVNC/index.html
  
-ARG ANDROID_VERSION=5.0.1
+ARG ANDROID_VERSION=9.0.1
 ARG API_LEVEL=29
 ARG SYS_IMG=x86_64
-ARG IMG_TYPE=google_apis_playstore
+ARG IMG_TYPE=google_apis
 ARG BROWSER=android
 ARG CHROME_DRIVER=2.40
 ARG GOOGLE_PLAY_SERVICE=12.8.74
@@ -90,8 +90,6 @@ ENV PATH ${PATH}:${ANDROID_HOME}/build-tools
 
 RUN yes | sdkmanager --licenses && \
     sdkmanager "platforms;android-${API_LEVEL}" "system-images;android-${API_LEVEL};${IMG_TYPE};${SYS_IMG}" "emulator"
-
-RUN wget -nv -U "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36" -O gapps.zip "https://netcologne.dl.sourceforge.net/project/opengapps/x86_64/20201015/open_gapps-x86_64-9.0-pico-20201015.zip"
 
 ENV DISPLAY=:0 \
     SCREEN=0 \
