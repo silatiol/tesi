@@ -20,6 +20,7 @@ RUN apt-get -qqy update && \
     x11-utils \
     x11vnc \
     openbox \
+    wmctrl \
     python-numpy \
     net-tools \
     libpulse0 \
