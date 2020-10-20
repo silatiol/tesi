@@ -17,6 +17,7 @@ RUN apt-get -qqy update && \
     xterm \
     supervisor \
     socat \
+    x11-utils \
     x11vnc \
     openbox \
     python-numpy \
