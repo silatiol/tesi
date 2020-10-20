@@ -12,7 +12,7 @@
 </resistance>
 
 <focus>
-  <focusNew>yes</focusNew>
+  <focusNew>no</focusNew>
   <!-- always try to focus new windows when they appear. other rules do
        apply -->
   <followMouse>no</followMouse>
@@ -652,11 +652,17 @@
 </menu>
 
 <applications>
+<application name="Android Emulator - testing:5554">
+    <layer>above</layer>
+ </application>
 <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
   # you may use one or more of the name/class/role/title/type rules to specify
   # windows to match
+  
+  
+
   <application name="the window's _OB_APP_NAME property (see obxprop)"
               class="the window's _OB_APP_CLASS property (see obxprop)"
           groupname="the window's _OB_APP_GROUP_NAME property (see obxprop)"
