@@ -33,14 +33,10 @@ function install_google_play () {
   echo "Done"
 }
 
-function prepare_zip () {
-  umask 000
-  unzip gapps.zip 'Core/*'
-  rm Core/setup*
-  lzip -d Core/*.lz
-  for f in $(ls Core/*.tar); do
-    tar -x --strip-components 2 -f $f
-  done
+function start_x11 () {
+  /usr/bin/x11vnc -id $(xwininfo -root -tree | grep 'Android Emulator' | tail -n1 | sed "s/^[ \t]*//" | cut -d ' ' -f1) -forever -shared -nopw &
 }
 
+start_x11
+sleep 1
 install_google_play
