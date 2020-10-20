@@ -34,7 +34,7 @@ function install_google_play () {
 }
 
 function start_x11 () {
-  wmctrl -a "Android Emulator - testing:5554"
+  wmctrl -c "Emulator Running in Nested Virtualization"
   /usr/bin/x11vnc -id $(xwininfo -root -tree | grep 'Android Emulator' | tail -n1 | sed "s/^[ \t]*//" | cut -d ' ' -f1) -forever -shared -nopw &
 }
 
