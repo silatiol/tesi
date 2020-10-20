@@ -56,17 +56,17 @@ RUN echo y | sdkmanager "platform-tools" && \
 
 ENV PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools
 
-ENV NOVNC_SHA="b403cb92fb8de82d04f305b4f14fa978003890d7" \
-    WEBSOCKIFY_SHA="558a6439f14b0d85a31145541745e25c255d576b"
-RUN  wget -nv -O noVNC.zip "https://github.com/novnc/noVNC/archive/v1.2.0.zip" \
- && unzip -x noVNC.zip \
- && rm noVNC.zip  \
- && mv noVNC-1.2.0 noVNC \
- && wget -nv -O websockify.zip "https://github.com/novnc/websockify/archive/v0.9.0.zip" \
- && unzip -x websockify.zip \
- && mv websockify-0.9.0 ./noVNC/utils/websockify \
- && rm websockify.zip \
- && ln noVNC/vnc_lite.html noVNC/index.html
+# ENV NOVNC_SHA="b403cb92fb8de82d04f305b4f14fa978003890d7" \
+#     WEBSOCKIFY_SHA="558a6439f14b0d85a31145541745e25c255d576b"
+# RUN  wget -nv -O noVNC.zip "https://github.com/novnc/noVNC/archive/v1.2.0.zip" \
+#  && unzip -x noVNC.zip \
+#  && rm noVNC.zip  \
+#  && mv noVNC-1.2.0 noVNC \
+#  && wget -nv -O websockify.zip "https://github.com/novnc/websockify/archive/v0.9.0.zip" \
+#  && unzip -x websockify.zip \
+#  && mv websockify-0.9.0 ./noVNC/utils/websockify \
+#  && rm websockify.zip \
+#  && ln noVNC/vnc_lite.html noVNC/index.html
  
 ARG ANDROID_VERSION=9.0.1
 ARG API_LEVEL=29
@@ -117,6 +117,7 @@ COPY keys /root/keys
 COPY src /root/src
 COPY apps /root/apps	
 COPY supervisord.conf /root/
+COPY noVNC /root/noVNC
 COPY entrypoint.sh /root/
 RUN chmod -R +x /root/src && chmod +x /root/supervisord.conf && chmod +x /root/entrypoint.sh
 
