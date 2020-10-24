@@ -122,9 +122,6 @@ COPY noVNC /root/noVNC
 COPY entrypoint.sh /root/
 RUN chmod -R +x /root/src && chmod +x /root/supervisord.conf && chmod +x /root/entrypoint.sh
 
-HEALTHCHECK --interval=2s --timeout=40s --retries=1 \
-    CMD timeout 40 adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done'
-
 ENTRYPOINT ["/root/entrypoint.sh"]
 CMD /usr/bin/supervisord --configuration supervisord.conf
 
